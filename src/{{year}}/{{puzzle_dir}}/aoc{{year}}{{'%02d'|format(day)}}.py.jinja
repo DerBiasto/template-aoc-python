@@ -1,4 +1,4 @@
-"""AoC [[day|int]], [[year]][% if puzzle_name %]: [[puzzle_name]][% endif %]"""
+"""AoC {{day}}, {{year}}{% if puzzle_name %}: {{puzzle_name}}{% endif %}."""
 import copy
 
 from aocd import get_data
@@ -6,8 +6,7 @@ from aocd import get_data
 InputType = list[int]
 OutputType = int
 
-
-def parse(puzzle_input: str) -> InputType:
+def parse_data(puzzle_input: str) -> InputType:
     """Parse file input."""
     return [
         line
@@ -28,11 +27,9 @@ def solve(data: InputType) -> list[str]:
     solution1 = part1(copy.deepcopy(data))
     solution2 = part2(data)
 
-    ret = [str(solution1)]
+    yield str(solution1)
     if solution2 is not None:
-        ret.append(str(solution2))
-
-    return ret
+        yield str(solution2)
 
 
 if __name__ == "__main__":
