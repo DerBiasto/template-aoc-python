@@ -6,6 +6,7 @@ from aocd import get_data
 InputType = list[int]
 OutputType = int
 
+
 def parse_data(puzzle_input: str) -> InputType:
     """Parse file input."""
     return [
@@ -33,5 +34,5 @@ def solve(data: InputType) -> list[str]:
 
 
 if __name__ == "__main__":
-    data = parse(get_data(year=[[year]], day=[[day|int]]))
+    data = parse_date(get_data(year={{year}}, day={{day}}))
     print("\n".join(solve(data)))
